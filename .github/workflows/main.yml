@@ -19,6 +19,9 @@ jobs:
         port: 21
         exclude: |
           documentation/*
+          documentation
+          .github/*
+          /github
           .gitignore
           README.md
           **/.git*
