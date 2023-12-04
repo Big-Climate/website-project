@@ -12,10 +12,10 @@ jobs:
     - name: Sync files
       uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
       with:
-        ftp_host: ftpupload.net
+        ftp_host: "ftpupload.net"
         ftp_username: ${{ secrets.FTP_USERNAME }}
         ftp_password: ${{ secrets.FTP_PASSWORD }}
-        local_source_dir: "source"
+        local_source_dir: "source/*"
         dist_target_dir: "htdocs"
         delete: "true"
         exclude: "'^logs/' '^README.md'"
