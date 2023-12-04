@@ -15,7 +15,7 @@ jobs:
         ftp_host: "ftpupload.net"
         ftp_username: ${{ secrets.FTP_USERNAME }}
         ftp_password: ${{ secrets.FTP_PASSWORD }}
-        local_source_dir: "source/*"
+        local_source_dir: "dist/source/*"
         dist_target_dir: "htdocs"
         delete: "true"
         exclude: "'^logs/' '^README.md'"
