@@ -1,0 +1,21 @@
+on: push
+name: Deploy website on push
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@main
+    
+    - name: Sync files
+      uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+      with:
+        ftp_host: "ftpupload.net"
+        ftp_username: ${{ secrets.FTP_USERNAME }}
+        ftp_password: ${{ secrets.FTP_PASSWORD }}
+        local_source_dir: "./source"
+        dist_target_dir: "theplanet.is-great.org/htdocs"
+        delete: "true"
+        exclude: "'^logs/' '^README.md'"
