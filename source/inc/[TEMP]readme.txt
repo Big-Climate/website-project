@@ -1,0 +1,1 @@
+This folder will contain all PHP files that do not have an interface (contain HTML) these are for backend use (such as an SQL client etc) below is a list of the files and their purpose. on relese this file should be deleted.
