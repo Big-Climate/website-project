@@ -1,5 +1,9 @@
-on: push
-name: Deploy website on push
+name: Deploy website on push to main
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
 jobs:
   web-deploy:
     name: Deploy
