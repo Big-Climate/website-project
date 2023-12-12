@@ -38,7 +38,22 @@
 		float: right;
 		padding-right: 200px;
 	}
-	@media (orientation: portrait) { #logo {left: 100px;} header a {padding: 28px 6px;} #header-right{padding-right: 150px;}}
+	@media (orientation: portrait) {
+		header {
+			height: 150px;
+		}
+		#logo {
+			left: 70px;
+		}
+		#home-ref { display: none; }
+		header a {
+			padding: 60px 6px;
+			font-size: 25px;
+		}
+		#header-right{
+			padding-right: 70px;
+		}
+	}
 </style>
 <link rel="stylesheet" href="colours.css">
 <header>
@@ -530,7 +545,7 @@ RoARYAQYAUaAEWAEGAFGgBFgBBgBRoARYAQYAUaAEWAEGAFGgBFgBBgBRoARYASK
 B4H/H+iDoqDcic10AAAADmVYSWZNTQAqAAAACAAAAAAAAADSU5MAAAAASUVORK5C
 YII="></a>
 	<div id="header-right">
-		<a class="text-header" href="/">Home</a>
+		<a class="text-header" id="home-ref" href="/">Home</a>
 		<a class="text-header" href="whydoesitmatter.php">Why does it matter?</a>
 		<a class="text-header" href="biggestthreats.php">Biggest threats</a>
 		<a class="text-header" href="whatcanido.php">What can I do</a>
