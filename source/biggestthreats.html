@@ -6,11 +6,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link href="./css/biggestthreats.css" rel="stylesheet" type="text/css" />
   </head>
+
+  <nav>
+    <link rel="stylesheet" href="./css/colours.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <a href="/"><img id="logo" src=".\assets\Logo.png" /></a>
+    <div id="header-right">
+      <a class="text-header" id="home-ref" href="index.html">Home</a>
+      <a class="text-header" href="biggestthreats.html">Biggest threats</a>
+      <a class="text-header" href="whatcanido.html">What Can I Do</a>
+      <a class="text-header" href="whyact.html">Why Act?</a>
+      <a class="text-header" href="quiz.html">Quiz</a>
+    </div>
+  </nav>
+
   <body>
     <div id="gradient"></div>
-    <?php include "header.html"; ?>
-
-
     <main>
       <div id="splash-image"><h1>Biggest Threats</h1></div>
       <div id="thing-container">
@@ -18,17 +29,15 @@
           <div class="left-text text">
             <h2>Deforestation</h2>
             <p>
-              As trees store carbon as they grow, cutting or burning down
-              trees releases that carbon into the atmosphere. Farmers may cut
-              down trees or clear land using fire to produce soya for animal
-              feed, such as in the Amazon. In other parts of the world, natural
+              As trees store carbon as they grow, cutting or burning down trees
+              releases that carbon into the atmosphere. Farmers may cut down
+              trees or clear land using fire to produce soya for animal feed,
+              such as in the Amazon. In other parts of the world, natural
               forests are cleared for timber, mining or palm oil.
             </p>
           </div>
           <div class="right-image image">
-            <img
-              src=".\assets\amazon-deforestation.avif"
-            />
+            <img src=".\assets\amazon-deforestation.avif" />
           </div>
         </div>
         <div id="2" class="message-container">
@@ -44,9 +53,7 @@
             </p>
           </div>
           <div class="left-image image">
-            <img
-              src=".\assets\52MLDFVC4NJSHM5WBTKVBG6FKU.avif"
-            />
+            <img src=".\assets\52MLDFVC4NJSHM5WBTKVBG6FKU.avif" />
           </div>
         </div>
         <div id="3" class="message-container">
@@ -62,9 +69,7 @@
             </p>
           </div>
           <div class="right-image image">
-            <img
-              src=".\assets\cows.jpeg"
-            />
+            <img src=".\assets\cows.jpeg" />
           </div>
         </div>
         <div id="4" class="message-container">
@@ -81,9 +86,7 @@
             </p>
           </div>
           <div class="left-image image">
-            <img
-              src=".\assets\carsSmog.webp"
-            />
+            <img src=".\assets\carsSmog.webp" />
           </div>
         </div>
         <div id="5" class="message-container">
@@ -98,9 +101,7 @@
             </p>
           </div>
           <div class="right-image image">
-            <img
-              src=".\assets\powerplant.jpg"
-            />
+            <img src=".\assets\powerplant.jpg" />
           </div>
         </div>
       </div>
@@ -122,8 +123,6 @@
       </div>
       <div id="smog-fade" style=""></div>
     </main>
-
-
 
     <script>
       //force #splash-image to behave properly on mobile
@@ -163,6 +162,5 @@
         }
       });
     </script>
-	
   </body>
 </html>

@@ -2,7 +2,7 @@ html {
     /*background: var(--background-colour);*/
     font-family: var(--font);
 }
-header {
+nav {
     position: fixed;
     z-index: 99;
     width: 100vw;
@@ -19,7 +19,7 @@ header {
     top: 50%;
     transform: translateY(-50%);
 }
-header a {
+nav a {
     float: left;
     color: black;
     text-align: center;
@@ -38,14 +38,14 @@ header a {
     padding-right: 200px;
 }
 @media (orientation: portrait) {
-    header {
+    nav {
         height: 150px;
     }
     #logo {
         left: 70px;
     }
     #home-ref { display: none; }
-    header a {
+    nav a {
         padding: 60px 6px;
         font-size: 25px;
     }
