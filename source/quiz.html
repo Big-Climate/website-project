@@ -18,4 +18,90 @@
     </div>
   </nav>
   <body></body>
+
+
+<style>
+
+.textBorder { 
+
+width: 320px;
+height: 100px;
+padding: 100px;
+border: 5px solid var(--nav-colour);
+margin: 0;
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50% , -50%);
+border-radius: 30px;
+font: var(--font);
+box-shadow: inset;
+font-size: 50px ;
+background-color: var(--background-colour);
+
+ 
+}
+
+.headerimage {
+
+    background-image: url(https://www.agrirs.co.uk/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK1ZVRHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d8e83cf885e6877bafa6107e3b7eaac60ccebfd4/iStock_943875208.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);  
+    position: absolute;  
+    padding: 300px; 
+    max-width: fit-content;
+    padding-left: 800px;
+}
+
+
+.userText {
+        padding:50px;
+        text-align: center;
+        text-decoration: none;
+    }
+	
+.buttonPos {
+    padding-left: 150px;
+    text-decoration: none;
+}
+
+
+
+</style>
+
+<script>
+	function storeName() {
+		var name = document.getElementById("name");
+
+		localStorage.setItem("name", name);
+		window.location.href = 'EcoWithYouQuestions.html';
+	}
+</script>
+
+
+
+    <link rel="stylesheet" href="colours.css">
+    <body>
+        
+         <div class="headerimage"> 
+            <div class="textBorder">
+            
+                <b>Quiz Time!</b>
+                <div class="userText">   
+                    <input type="text" id="name" name="name" width="100px" style="position: absolute; display: block;" placeholder="Enter Name" oninput="document.getElementById('goButton').style.display = 'block'; ">
+                    <div class="buttonPos">
+                    
+                            <button id="goButton" style=" border-radius: 5px ; background-color: var(--nav-colour); border-color: var(--background-colour); display: none;" type="button" onclick="storeName()" >GO</button>
+
+                    </div>
+                </div> 
+            
+            </div>   
+        </div>
+
+    </body>
 </html>
