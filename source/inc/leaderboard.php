@@ -13,7 +13,7 @@ class Score {
 }
 
 function CSVToArray() {
-    $csvToRead = fopen("leaderboard.csv", 'r');
+    $csvToRead = fopen($_SERVER['DOCUMENT_ROOT'] . "/inc/leaderboard.csv", 'r');
     while (!feof($csvToRead)) {
         $csvArray[] = new Score(((array)fgetcsv($csvToRead, 1000, ';'))[0]);
     }
