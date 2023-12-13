@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
+    <link rel="stylesheet" href="./css/colours.css" />
+    <link rel="stylesheet" href="./css/quiz.css" />
   </head>
+
   <nav>
     <link rel="stylesheet" href="./css/colours.css" />
     <link rel="stylesheet" href="./css/header.css" />
@@ -17,5 +20,54 @@
       <a class="text-header" href="quiz.html">Quiz</a>
     </div>
   </nav>
-  <body></body>
+
+  <body>
+    <div class="headerimage">
+      <div class="textBorder">
+        <b>Quiz Time!</b>
+        <div class="userText">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="textBoxStyle"
+            placeholder="Enter Name"
+            onclick="wid"
+            oninput="buttonAnimation()"
+          />
+          <div class="buttonPos">
+            <button
+              class="hide"
+              id="goButton"
+              style="
+                border-radius: 5px;
+                background-color: var(--nav-colour);
+                border-color: var(--background-colour);
+                display: none;
+              "
+              type="button"
+              onclick="storeName()"
+            >
+              GO
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function storeName() {
+      var name = document.getElementById("name");
+
+      localStorage.setItem("name", name);
+      window.location.href = "EcoWithYouQuestion.html";
+    }
+
+    function buttonAnimation() {
+      var inputBox = document.getElementById("name");
+      inputBox.style.width = 100 + "px";
+      document.getElementById("goButton").style.display = "block";
+    }
+  </script>
 </html>
