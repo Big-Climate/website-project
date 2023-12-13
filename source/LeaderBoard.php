@@ -21,7 +21,7 @@
     </div>
   </nav>
 
-  <body>
+  <body onload="podiumAnimation()">
     <div class="headerimage">
       <div class="textBorder">
         <h1>Leaderboard</h1>
@@ -77,5 +77,19 @@
     // Display the value on the page
     var output = document.getElementById("ScoreL");
     output.innerText = name + "'s Score: " + score;
+
+function podiumAnimation() {
+      var myDiv = document.getElementById("first");     
+      myDiv.style.height = 100 + "px";
+
+      var myDiv = document.getElementById("second");     
+      myDiv.style.height = 70 + "px";
+
+      var myDiv = document.getElementById("third");     
+      myDiv.style.height = 50 + "px";
+      
+    }
+
+    
   </script>
 </html>
