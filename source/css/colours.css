@@ -1,0 +1,8 @@
+:root {
+	--background-colour: rgb(240,240,240);
+	--font: verdana;
+	--nav-colour: rgb(53,119,105);
+	--nav-seethrough: rgba(53,119,105,0);
+	--text-colour: rgb(40, 40, 40);
+	--nav-grad: linear-gradient(to right, var(--nav-seethrough) 0%, var(--nav-colour) 20%, var(--nav-colour) 80%, var(--nav-seethrough) 100%);
+}
