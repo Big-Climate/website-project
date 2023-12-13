@@ -65,10 +65,19 @@ background-color: var(--background-colour);
     }
 	
 .buttonPos {
-    padding-left: 150px;
+    padding-left: 120px;
     text-decoration: none;
+    transition: 0.5s;
 }
 
+.textBoxStyle {
+  width:200px;
+  position: absolute; 
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+}
 
 
 </style>
@@ -80,6 +89,12 @@ background-color: var(--background-colour);
 		localStorage.setItem("name", name);
 		window.location.href = 'EcoWithYouQuestion.html';
 	}
+
+  function buttonAnimation() {
+var inputBox = document.getElementById("name")
+inputBox.style.width = 100 + "px";
+document.getElementById('goButton').style.display = 'block'; 
+}
 </script>
 
 
@@ -92,10 +107,10 @@ background-color: var(--background-colour);
             
                 <b>Quiz Time!</b>
                 <div class="userText">   
-                    <input type="text" id="name" name="name" width="100px" style="position: absolute; display: block;" placeholder="Enter Name" oninput="document.getElementById('goButton').style.display = 'block'; ">
+                    <input type="text" id="name" name="name" class="textBoxStyle" placeholder="Enter Name" onclick="wid" oninput="buttonAnimation()">
                     <div class="buttonPos">
                     
-                            <button id="goButton" style=" border-radius: 5px ; background-color: var(--nav-colour); border-color: var(--background-colour); display: none;" type="button" onclick="storeName()" >GO</button>
+                            <button class="hide" id="goButton" style=" border-radius: 5px ; background-color: var(--nav-colour); border-color: var(--background-colour); display: none;" type="button" onclick="storeName()" >GO</button>
 
                     </div>
                 </div> 

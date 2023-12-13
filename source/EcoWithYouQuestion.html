@@ -167,6 +167,7 @@ padding-right: 100px;
         text-align: center;
         padding-top: 3px;
         padding-bottom: 3px;
+        position: static;
         
 
         
@@ -223,15 +224,21 @@ padding-right: 100px;
 
 .scoreDisplay {
   font-size: 15px;
+    font: var(--font); 
+    color: var(--nav-colour);
+    position: static; 
 }
 
 .digit { 
-    font-size: 150px; 
+    font-size: 15px;
+    font: var(--font); 
     color: var(--nav-colour); 
 } 
   
 .txt { 
-    font-size: 30px; 
+  
+    font-size: 15px; 
+    font: var(--font); 
     color: var(--nav-colour); 
 } 
 
@@ -385,7 +392,12 @@ handleQuestions()
               window.location.href = 'LeaderBoard.html';
             }
 
-      
+
+  
+
+  
+  
+     
         </script>
 
 
@@ -408,12 +420,11 @@ handleQuestions()
                         <div class="column"><p type="button" class="buttonOption" id="ButC" onclick="clicked(this.id)"></p>
                             <p type="button" class="buttonOption" id="ButD" onclick="clicked(this.id)"></p>
 
-                            <span class="txt">Min</span> 
-                            <span class="digit" id="sec"> 
-                                00</span> 
-                            <span class="txt">Sec</span> 
-                            <span class="digit" id="count"> 
-                                00</span> 
+                            <p class="txt">Min</p> 
+                            <p class="digit" id="sec">:</p> 
+                            <p class="txt">Sec</p> 
+                            <p class="digit" id="count"> 
+                            </p> 
                         </div>
                       
                     </div>  
