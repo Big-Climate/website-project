@@ -1,0 +1,119 @@
+
+
+.title-image {
+   position: relative;
+   text-align: center;
+    color: black;
+    font-size: 40px;
+    text-shadow: 1px 0 0 white
+    , 0 -1px 0 white, 0 1px 0 white, -1px 0 0 white;
+}
+
+@media(max-width:1024px){
+	.title-image{
+		font-size: 25px;
+	}
+}
+
+@media(max-width:600px){
+	.title-image{
+		font-size: 13px;
+	}
+}
+
+.intro{
+  margin-left: 10%;
+  margin-right: 10%
+}
+
+@media(min-width:600px){
+  li {
+    display:inline-block;
+    width: 12%;
+  }
+}
+
+div ul li a {
+  color: black;
+  font-size: h2;
+}
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 20%;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Bottom center text */
+.bottom-center {
+    position:absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%)
+}
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*image in line with text */
+.column {
+	float: left;
+}
+  
+	.image {
+	width: 33%;
+	text-align: center;
+	}
+
+  .text {
+  width: 66%;
+  text-align:center;
+  }
+
+	@media(max-width:1024px){
+		.column {
+      float: left;
+    }
+      
+      .image {
+      width: 100%;
+      text-align: center;
+      }
+    
+      .text {
+      width: 100%;
+      text-align:center;
+      }
+	}
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
