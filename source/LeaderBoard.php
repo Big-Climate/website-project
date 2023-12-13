@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,18 +9,7 @@
     <link rel="stylesheet" href="./css/LeaderBoard.css" />
   </head>
 
-  <nav>
-    <link rel="stylesheet" href="./css/colours.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <a href="/"><img id="logo" src=".\assets\Logo.png" /></a>
-    <div id="header-right">
-      <a class="text-header" id="home-ref" href="index.html">Home</a>
-      <a class="text-header" href="biggestthreats.html">Biggest threats</a>
-      <a class="text-header" href="whatcanido.html">What Can I Do</a>
-      <a class="text-header" href="whyact.html">Why Act?</a>
-      <a class="text-header" href="quiz.html">Quiz</a>
-    </div>
-  </nav>
+  <?php include "header.html"; ?>
 
   <body onload="podiumAnimation()">
     <div class="headerimage">
@@ -55,30 +45,31 @@
   </body>
 
   <script>
-    let ids = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh"];
-    let leaderboard = [
-    <?php
-      require_once("inc/leaderboard.php");
-      $scores = CSVToArray();
-      for($i = 0; $i < sizeof($scores); $i++) {
-        echo '{name:"' . $scores[$i]->name . '", score:' . $scores[$i]->score . "},";
+     let ids = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh"];
+     let leaderboard = [
+      <?php
+        require_once("inc/leaderboard.php");
+        $scores = CSVToArray();
+        for($i = 0; $i < sizeof($scores); $i++) {
+          echo '{name:"' . $scores[$i]->name . '", score:' . $scores[$i]->score . "},";
+        }
+      ?>
+      ];
+      for(let i = 0; i < leaderboard.length; i++) {
+        document.getElementById(ids[i]).innerHTML = leaderboard[i].name;
+        if(i < 3) {
+          document.getElementById(ids[i] + "Score").innerHTML = leaderboard[i].score;
+        }
       }
-    ?>
-    ];
-    for(let i = 0; i < leaderboard.length; i++) {
-      document.getElementById(ids[i]).innerHTML = leaderboard[i].name;
-      if(i < 3) {
-        document.getElementById(ids[i] + "Score").innerHTML = leaderboard[i].score;
-      }
-    }
-    // Get the value from localStorage
-    var score = localStorage.getItem("score");
-    var name = localStorage.getItem("name");
-    // Display the value on the page
-    var output = document.getElementById("ScoreL");
-    output.innerText = name + "'s Score: " + score;
+      // Get the value from localStorage
+      var score = localStorage.getItem("score");
+      var name = localStorage.getItem("name");
+      // Display the value on the page
+      var output = document.getElementById("ScoreL");
+      output.innerText = "<?php echo $_SESSION['name']; ?>" + "'s Score: " + score;
 
-function podiumAnimation() {
+
+    function podiumAnimation() {
       var myDiv = document.getElementById("first");     
       myDiv.style.height = 100 + "px";
 
@@ -89,7 +80,5 @@ function podiumAnimation() {
       myDiv.style.height = 50 + "px";
       
     }
-
-    
   </script>
 </html>
