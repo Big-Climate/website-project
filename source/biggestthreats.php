@@ -7,18 +7,7 @@
     <link href="./css/biggestthreats.css" rel="stylesheet" type="text/css" />
   </head>
 
-  <nav>
-    <link rel="stylesheet" href="./css/colours.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <a href="/"><img id="logo" src=".\assets\Logo.png" /></a>
-    <div id="header-right">
-      <a class="text-header" id="home-ref" href="index.html">Home</a>
-      <a class="text-header" href="biggestthreats.html">Biggest threats</a>
-      <a class="text-header" href="whatcanido.html">What Can I Do</a>
-      <a class="text-header" href="whyact.html">Why Act?</a>
-      <a class="text-header" href="quiz.html">Quiz</a>
-    </div>
-  </nav>
+  <?php include "header.html"; ?>
 
   <body>
     <div id="gradient"></div>

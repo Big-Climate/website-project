@@ -193,8 +193,9 @@
 .podium .first {
   padding-top: 10px;
   width: 100px;
-  min-height: 100px;
+  height: 0px;
   background: var(--nav-colour);
+   transition: all 0.3s ease-in-out;
 }
 
 .podium .first:hover {
@@ -205,8 +206,9 @@
 .podium .second {
   padding-top: 10px;
   width: 100px;
-  min-height: 70px;
+  height: 0px;
   background: rgb(90, 156, 144);
+   transition: all 0.7s ease-in-out;
 }
 .podium .second:hover {
   animation-name: secondShine;
@@ -216,8 +218,9 @@
 .podium .third {
   padding-top: 10px;
   width: 100px;
-  min-height: 50px;
+  height: 0px;
   background: rgb(120, 178, 167);
+   transition: all 1.1s ease-in-out;
 }
 .podium .third:hover {
   animation-name: thirdShine;
