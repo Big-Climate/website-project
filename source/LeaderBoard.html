@@ -38,7 +38,7 @@
           </div>
 
           <div class="podium__item">
-            <p id="thirdTime" class="scoreText">score</p>
+            <p id="thirdScore" class="scoreText">score</p>
             <p id="third" class="podium__rank third">third</p>
           </div>
         </div>
@@ -56,12 +56,24 @@
 
   <script>
     function GetStoredValues() {
+      podiumAnimation()
       // Get the value from localStorage
       var score = localStorage.getItem("score");
       var name = localStorage.getItem("name");
       // Display the value on the page
       var output = document.getElementById("ScoreL");
       output.innerText = name + "'s Score: " + score;
+    }
+    function podiumAnimation() {
+      var myDiv = document.getElementById("first");     
+      myDiv.style.height = 100 + "px";
+
+      var myDiv = document.getElementById("second");     
+      myDiv.style.height = 70 + "px";
+
+      var myDiv = document.getElementById("third");     
+      myDiv.style.height = 50 + "px";
+      
     }
   </script>
 </html>
