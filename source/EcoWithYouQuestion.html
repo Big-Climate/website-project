@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/EcoWithYouQuestion.css">
     <title>Quiz</title>
   </head>
   <nav>
@@ -17,438 +18,195 @@
       <a class="text-header" href="quiz.html">Quiz</a>
     </div>
   </nav>
- 
- <style>
 
+  <link rel="stylesheet" href="colours.css" />
 
+  <body onload="nextQuestion(0)">
+    <main>
+      <div class="textBorder">
+        <label id="display-question"> </label>
 
-.textBorder { 
+        <div class="row">
+          <div class="column">
+            <p
+              type="button"
+              class="buttonOption"
+              id="ButA"
+              onclick="clicked(this.id)"
+            ></p>
 
-width: 320px;
-height: 250px;
-padding: 10px;
-border: 5px solid var(--nav-colour);
-margin: 0;
-text-align: center;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50% , -50%);
-border-radius: 30px;
-font: var(--font);
-box-shadow: inset;
-font-size: 25px ;
-background-color: var(--background-colour);
-padding-left: 100px;
-padding-right: 100px;
+            <p
+              type="button"
+              class="buttonOption"
+              id="ButB"
+              onclick="clicked(this.id)"
+            ></p>
+            <p type="button" class="scoreDisplay" id="ScoreL">Score: 0</p>
+          </div>
+          <div class="column">
+            <p
+              type="button"
+              class="buttonOption"
+              id="ButC"
+              onclick="clicked(this.id)"
+            ></p>
+            <p
+              type="button"
+              class="buttonOption"
+              id="ButD"
+              onclick="clicked(this.id)"
+            ></p>
 
+            <p class="txt">Min</p>
+            <p class="digit" id="sec">:</p>
+            <p class="txt">Sec</p>
+            <p class="digit" id="count"></p>
+          </div>
+        </div>
+      </div>
+    </main>
 
- 
-}
+    <div class="waveAnimation">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+        <path
+          class="w1 waveTop"
+          d="M-8.74,71.55 C289.78,255.11 349.60,4.47 505.36,34.05 L500.00,150.00 L0.00,150.00 Z"
+        />
+        <path
+          class="w2 waveMiddle"
+          d="M-23.42,125.83 C187.63,45.89 299.38,57.73 526.80,123.86 L500.00,150.00 L0.00,150.00 Z"
+        />
+        <path
+          class="w3 waveBottom"
+          d="M-23.42,125.83 C172.96,-152.44 217.55,183.06 504.22,55.77 L500.00,150.00 L0.00,150.00 Z"
+        />
+      </svg>
+    </div>
+  </body>
 
-
-
-
-.userText {
-    border: 2.5px solid var(--nav-colour);
-    width: 320px;
-    
-
-    }
-	
-.buttonPos {
-    padding-left: 150px;
-    text-decoration: none;
-}
-
-
-
-.column {
-    float: left;
-    width: 50%;
-    
-    
-    
-  }
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .waveAnimation {
-			bottom: -51vh;
-			width: 100vw;
-			height: 100vh;
-			position: fixed;
-			pointer-events: none;
-		}
-		.w1 {
-	    stroke: none;
-	    /*fill: #b3696c;*/
-	    fill: rgb(0, 0, 0);
-	    opacity: 1%;
-	    animation: move1 5s ease-in-out infinite;
-	  }
-	  .w2 {
-	    stroke: none;
-	    /*fill: #b3696c;*/
-	    fill: rgb(0, 255, 157);
-	    opacity: 2%;
-	    transform: translate3d(0, 0, 0);
-	    animation: move2 4s ease-in-out infinite;
-	  }
-	  .w3 {
-	    stroke: none;
-	    /*fill: #cf2127;*/
-	    fill: var(--nav-colour);
-	    opacity: 5%;
-	    transform: translate3d(0, 0, 0);
-	    animation: move3 6s ease-in-out infinite;
-	  }
-	  @keyframes move1 {
-	    0% {
-	      transform: translateX(-500px) scaleX(2.5);
-	    }
-	    25% {
-	      transform: translateX(-100) scaleX(2.5);
-	    }
-	    50% {
-	      transform: translateX(0) scaleX(2.5);
-	    }
-	    75% {
-	      transform: translateX(-100) scaleX(2.5);
-	    }
-	    100% {
-	      transform: translateX(-500px) scaleX(2.5);
-	    }
-	  }
-	  @keyframes move2 {
-	    0% {
-	      transform: translateX(-600px) scaleX(3);
-	    }
-	    25% {
-	      transform: translateX(-100) scaleX(2.5);
-	    }
-	    50% {
-	      transform: translateX(0) scaleX(3);
-	    }
-	    75% {
-	      transform: translateX(-100) scaleX(2.5);
-	    }
-	    100% {
-	      transform: translateX(-600px) scaleX(3);
-	    }
-	  }
-	  @keyframes move3 {
-	    0% {
-	      transform: translateX(-800px) scaleX(3);
-	    }
-	    25% {
-	      transform: translateX(-100) scaleX(2.5);
-	    }
-	    50% {
-	      transform: translateX(0) scaleX(3);
-	    }
-	    75% {
-	      transform: translateX(-100) scaleX(2.5);
-	    }
-	    100% {
-	      transform: translateX(-800px) scaleX(3);
-	    }
-	  }
-
-      .buttonOption {
-        border: 2.5px solid var(--nav-colour); 
-        font-size: 20px;
-        border-radius: 30px;
-        width: 150px;
-        transition: 0.3s;
-        text-align: center;
-        padding-top: 3px;
-        padding-bottom: 3px;
-        position: static;
-        
-
-        
-    
-}
-
-@keyframes shine {
-    0% {
-    background: linear-gradient(
-      30deg, 
-      hsl(260, 85%, 95%) 0%, 
-      var(--nav-colour) 25%
-    );
-  }
-
-  25% {
-    background: linear-gradient(
-      30deg, 
-      var(--nav-colour) 0%, 
-      hsl(260, 85%, 95%) 25%, 
-      var(--nav-colour) 50%);
-  }
-
-  50% {
-    background: linear-gradient(
-      30deg,
-      var(--nav-colour) 0%, 
-      hsl(260, 85%, 95%) 50%, 
-      var(--nav-colour) 75%); 
-  }
-
-  75% {
-    background: linear-gradient(
-      30deg, 
-      var(--nav-colour) 0%, 
-      hsl(260, 85%, 95%) 75%, 
-      var(--nav-colour) 100%); 
-  }
-
-  100% {
-    background: linear-gradient(
-      30deg, 
-      var(--nav-colour) 0%, 
-      hsl(260, 85%, 95%) 100%); 
-  }
-}
-.buttonOption:hover {
-    background-color: var(--nav-colour);
-    color: var(--background-colour);    
-    animation-name: shine;
-    animation-duration: 260ms;
-    font-size: 21px;
-}
-
-.scoreDisplay {
-  font-size: 15px;
-    font: var(--font); 
-    color: var(--nav-colour);
-    position: static; 
-}
-
-.digit { 
-    font-size: 15px;
-    font: var(--font); 
-    color: var(--nav-colour); 
-} 
-  
-.txt { 
-  
-    font-size: 15px; 
-    font: var(--font); 
-    color: var(--nav-colour); 
-} 
-
-</style>
-
-
-
-
-
-    <link rel="stylesheet" href="colours.css">
-    <body onload="nextQuestion(0)">
-        
-        <script>
-
-const questionList = [  
-     
-{
+  <script>
+    const questionList = [
+      {
         question: "What is the Most Abundant Gas in the Atmosphere?",
         optionA: "Oxygen",
         optionB: "Methane",
         optionC: "Argon",
         optionD: "Nitrogen",
-        correctOption: "ButD"
-    },
+        correctOption: "ButD",
+      },
 
-    {
+      {
         question: "How Long does a Plastic Bottle Take to Decompose?",
         optionA: "6 months",
         optionB: "40 years",
         optionC: "450 years",
         optionD: "200 years",
-        correctOption: "ButC"
-    },
-    {
-        question: "How Many Planets Are Needed to Support the Demand of Resources?",
+        correctOption: "ButC",
+      },
+      {
+        question:
+          "How Many Planets Are Needed to Support the Demand of Resources?",
         optionA: "1",
         optionB: "0.7",
         optionC: "1.5",
         optionD: "1.7",
-        correctOption: "ButD"
-    },
+        correctOption: "ButD",
+      },
 
-    {
-        question: "In What Year Could the Effects of Global Warming Be Irreversible?",
+      {
+        question:
+          "In What Year Could the Effects of Global Warming Be Irreversible?",
         optionA: "2025",
         optionB: "2030",
         optionC: "2050",
         optionD: "3000",
-        correctOption: "ButB"
-    },
+        correctOption: "ButB",
+      },
 
-    {
+      {
         question: "Which Animals Is Not Extinct?",
         optionA: "Golden Toad",
         optionB: "Spix Macaw",
         optionC: "Amur Leopard",
         optionD: "Red Gazelle",
-        correctOption: "ButC"
-    },
+        correctOption: "ButC",
+      },
 
-    {
+      {
         question: "What Country is the Most Eco Friendly?",
         optionA: "Denmark",
         optionB: "Iceland",
         optionC: "Norway",
         optionD: "Sweden",
-        correctOption: "ButA"
-    },
+        correctOption: "ButA",
+      },
+    ];
 
-  ]
-
-
-  let questions = [] 
-function handleQuestions() { 
-  
-    while (questions.length <= 4) {
-        const random = questionList[Math.floor(Math.random() * questionList.length)]
+    let questions = [];
+    function handleQuestions() {
+      while (questions.length <= 4) {
+        const random =
+          questionList[Math.floor(Math.random() * questionList.length)];
         if (!questions.includes(random)) {
-            questions.push(random)
+          questions.push(random);
         }
+      }
     }
-}
 
-            var score = 0;
-            var index = 0;
-function clicked(currentID) { 
-     checkCorrect(currentID);
-     index++;
-     setTimeout(() => {
-      if (index <= 4){
-  nextQuestion(index);
-}
-else {
-  endGame()
-}
-     },500)
+    var score = 0;
+    var index = 0;
+    function clicked(currentID) {
+      checkCorrect(currentID);
+      index++;
+      setTimeout(() => {
+        if (index <= 4) {
+          nextQuestion(index);
+        } else {
+          endGame();
+        }
+      }, 500);
+    }
 
-     
-                
-}
-           
-function nextQuestion(index) {
-handleQuestions()
- 
-    
-    
-    var CurQ = questions[index];
-    var DisplayQ = document.getElementById("display-question") ;             
-    var entered = CurQ.question;
-    DisplayQ.innerText = entered;
+    function nextQuestion(index) {
+      handleQuestions();
 
-    var CurQ = questions[index];
-    var curA = document.getElementById("ButA")   ;           
-    var entered = CurQ.optionA;
-    curA.innerText = entered;
+      var CurQ = questions[index];
+      var DisplayQ = document.getElementById("display-question");
+      var entered = CurQ.question;
+      DisplayQ.innerText = entered;
 
-    var curB = document.getElementById("ButB");              
-    var entered = CurQ.optionB;
-    curB.innerText = entered;
+      var CurQ = questions[index];
+      var curA = document.getElementById("ButA");
+      var entered = CurQ.optionA;
+      curA.innerText = entered;
 
-    var curC = document.getElementById("ButC") ;             
-    var entered = CurQ.optionC;
-    curC.innerText = entered;
+      var curB = document.getElementById("ButB");
+      var entered = CurQ.optionB;
+      curB.innerText = entered;
 
-    var curD = document.getElementById("ButD") ;             
-    var entered = CurQ.optionD;
-    curD.innerText = entered;
-                    
-                
-}
+      var curC = document.getElementById("ButC");
+      var entered = CurQ.optionC;
+      curC.innerText = entered;
 
+      var curD = document.getElementById("ButD");
+      var entered = CurQ.optionD;
+      curD.innerText = entered;
+    }
 
+    function checkCorrect(currentID) {
+      var CurQ = questions[index];
+      var curAns = CurQ.correctOption;
+      if (currentID == curAns) {
+        score++;
+        var DisSc = document.getElementById("ScoreL");
+        var entered = score;
+        DisSc.innerText = "Score:" + entered;
+      }
+    }
 
-            function checkCorrect(currentID) {
-                var CurQ = questions[index];
-                var curAns = CurQ.correctOption;
-                if (currentID == curAns) {            
-                    score++;
-                    var DisSc = document.getElementById("ScoreL");            
-                    var entered = score;
-                    DisSc.innerText = "Score:" + entered; 
-                }
-                
-                
-            }
-
-
-
-            function endGame() {
-              localStorage.setItem("score",score);
-              window.location.href = 'LeaderBoard.html';
-            }
-
-
-  
-
-  
-  
-     
-        </script>
-
-
-
-        <main>
-         
-          
-            <div class="textBorder">          
-                <label id="display-question"> </label> 
-
-                
-                
-            
-                  <div class="row">
-                        <div class="column"><p type="button" class="buttonOption" id="ButA" onclick="clicked(this.id)" ></p>
-                           
-                            <p type="button" class="buttonOption" id="ButB" onclick="clicked(this.id)"></p>
-                            <p type="button" class="scoreDisplay" id="ScoreL" >Score: 0</p> 
-                        </div>                       
-                        <div class="column"><p type="button" class="buttonOption" id="ButC" onclick="clicked(this.id)"></p>
-                            <p type="button" class="buttonOption" id="ButD" onclick="clicked(this.id)"></p>
-
-                            <p class="txt">Min</p> 
-                            <p class="digit" id="sec">:</p> 
-                            <p class="txt">Sec</p> 
-                            <p class="digit" id="count"> 
-                            </p> 
-                        </div>
-                      
-                    </div>  
-                    
-            </div>
-           
-        
-        </main>  
-
-<div class="waveAnimation">
-                <svg viewBox="0 0 500 150" preserveAspectRatio="none">
-                  <path
-                    class="w1 waveTop" d="M-8.74,71.55 C289.78,255.11 349.60,4.47 505.36,34.05 L500.00,150.00 L0.00,150.00 Z"/>
-                  <path
-                    class="w2 waveMiddle" d="M-23.42,125.83 C187.63,45.89 299.38,57.73 526.80,123.86 L500.00,150.00 L0.00,150.00 Z"/>
-                  <path
-                    class="w3 waveBottom" d="M-23.42,125.83 C172.96,-152.44 217.55,183.06 504.22,55.77 L500.00,150.00 L0.00,150.00 Z"/>
-                </svg>
-              </div>
-
-
-    </body>
-
-    
-
-</html>
+    function endGame() {
+      localStorage.setItem("score", score);
+      window.location.href = "LeaderBoard.html";
+    }
+  </script>
 </html>
