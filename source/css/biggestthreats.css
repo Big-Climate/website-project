@@ -31,7 +31,7 @@ body {
   width: 1235px;
   height: 693px;
   background-color: #cb1c09;
-  background-image: url("fire.jpg");
+  background-image: url("../assets/fire.jpg");
   background-repeat: no-repeat;
   background-size: 1235px, 702px;
   position: absolute;
