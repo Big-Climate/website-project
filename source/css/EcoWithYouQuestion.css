@@ -1,0 +1,204 @@
+.textBorder {
+  width: 320px;
+  height: 250px;
+  padding: 10px;
+  border: 5px solid var(--nav-colour);
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  font: var(--font);
+  box-shadow: inset;
+  font-size: 25px;
+  background-color: var(--background-colour);
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.userText {
+  border: 2.5px solid var(--nav-colour);
+  width: 320px;
+}
+
+.buttonPos {
+  padding-left: 150px;
+  text-decoration: none;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.waveAnimation {
+  bottom: -51vh;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  pointer-events: none;
+}
+.w1 {
+  stroke: none;
+  /*fill: #b3696c;*/
+  fill: rgb(0, 0, 0);
+  opacity: 1%;
+  animation: move1 5s ease-in-out infinite;
+}
+.w2 {
+  stroke: none;
+  /*fill: #b3696c;*/
+  fill: rgb(0, 255, 157);
+  opacity: 2%;
+  transform: translate3d(0, 0, 0);
+  animation: move2 4s ease-in-out infinite;
+}
+.w3 {
+  stroke: none;
+  /*fill: #cf2127;*/
+  fill: var(--nav-colour);
+  opacity: 5%;
+  transform: translate3d(0, 0, 0);
+  animation: move3 6s ease-in-out infinite;
+}
+@keyframes move1 {
+  0% {
+    transform: translateX(-500px) scaleX(2.5);
+  }
+  25% {
+    transform: translateX(-100) scaleX(2.5);
+  }
+  50% {
+    transform: translateX(0) scaleX(2.5);
+  }
+  75% {
+    transform: translateX(-100) scaleX(2.5);
+  }
+  100% {
+    transform: translateX(-500px) scaleX(2.5);
+  }
+}
+@keyframes move2 {
+  0% {
+    transform: translateX(-600px) scaleX(3);
+  }
+  25% {
+    transform: translateX(-100) scaleX(2.5);
+  }
+  50% {
+    transform: translateX(0) scaleX(3);
+  }
+  75% {
+    transform: translateX(-100) scaleX(2.5);
+  }
+  100% {
+    transform: translateX(-600px) scaleX(3);
+  }
+}
+@keyframes move3 {
+  0% {
+    transform: translateX(-800px) scaleX(3);
+  }
+  25% {
+    transform: translateX(-100) scaleX(2.5);
+  }
+  50% {
+    transform: translateX(0) scaleX(3);
+  }
+  75% {
+    transform: translateX(-100) scaleX(2.5);
+  }
+  100% {
+    transform: translateX(-800px) scaleX(3);
+  }
+}
+
+.buttonOption {
+  border: 2.5px solid var(--nav-colour);
+  font-size: 20px;
+  border-radius: 30px;
+  width: 150px;
+  transition: 0.3s;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: static;
+}
+
+@keyframes shine {
+  0% {
+    background: linear-gradient(
+      30deg,
+      hsl(260, 85%, 95%) 0%,
+      var(--nav-colour) 25%
+    );
+  }
+
+  25% {
+    background: linear-gradient(
+      30deg,
+      var(--nav-colour) 0%,
+      hsl(260, 85%, 95%) 25%,
+      var(--nav-colour) 50%
+    );
+  }
+
+  50% {
+    background: linear-gradient(
+      30deg,
+      var(--nav-colour) 0%,
+      hsl(260, 85%, 95%) 50%,
+      var(--nav-colour) 75%
+    );
+  }
+
+  75% {
+    background: linear-gradient(
+      30deg,
+      var(--nav-colour) 0%,
+      hsl(260, 85%, 95%) 75%,
+      var(--nav-colour) 100%
+    );
+  }
+
+  100% {
+    background: linear-gradient(
+      30deg,
+      var(--nav-colour) 0%,
+      hsl(260, 85%, 95%) 100%
+    );
+  }
+}
+.buttonOption:hover {
+  background-color: var(--nav-colour);
+  color: var(--background-colour);
+  animation-name: shine;
+  animation-duration: 260ms;
+  font-size: 21px;
+}
+
+.scoreDisplay {
+  font-size: 15px;
+  font: var(--font);
+  color: var(--nav-colour);
+  position: static;
+}
+
+.digit {
+  font-size: 15px;
+  font: var(--font);
+  color: var(--nav-colour);
+}
+
+.txt {
+  font-size: 15px;
+  font: var(--font);
+  color: var(--nav-colour);
+}
