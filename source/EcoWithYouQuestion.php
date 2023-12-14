@@ -46,10 +46,19 @@
               onclick="clicked(this.id)"
             ></p>
 
-            <p class="txt">Min</p>
-            <p class="digit" id="sec">:</p>
-            <p class="txt">Sec</p>
-            <p class="digit" id="count"></p>
+            <div class="time">
+              <span class="minute">00</span>
+              <span class="colon">:</span>
+              <span class="second">00</span>
+              <span class="colon ms-colon">:</span>
+              <span class="millisecond">00</span>
+            </div>
+            <div class="">
+              <button class="start"></button>
+              <button class="stop"></button>
+              <button class="reset"></button>
+
+            </div>
           </div>
         </div>
       </div>
@@ -74,6 +83,60 @@
   </body>
 
   <script>
+
+
+let  min = sec = ms = "0" + 0,
+    startTimer;
+  const startBtn = document.querySelector(".start"),
+   stopBtn = document.querySelector(".stop"),
+   resetBtn = document.querySelector(".reset");
+  function start() {
+   startBtn.classList.add("active");
+   stopBtn.classList.remove("stopActive");
+    startTimer = setInterval(()=>{
+      ms++
+      ms = ms < 10 ? "0" + ms : ms;
+      if(ms == 100){
+        sec++;
+        sec = sec < 10 ? "0" + sec : sec;
+        ms = "0" + 0;
+      }
+      if(sec == 60){
+        min++;
+        min = min < 10 ? "0" + min : min;
+        sec = "0" + 0;
+      }
+      if(min == 60){
+        hr++;
+        hr = hr < 10 ? "0" + hr : hr;
+        min = "0" + 0;
+      }
+      putValue();
+    },10); //1000ms = 1s
+  }
+  function stop() {
+    startBtn.classList.remove("active");
+    stopBtn.classList.add("stopActive");
+    clearInterval(startTimer);
+  }
+  function reset() {
+    startBtn.classList.remove("active");
+    stopBtn.classList.remove("stopActive");
+    clearInterval(startTimer);
+    hr = min = sec = ms = "0" + 0;
+    putValue();
+  }
+  function putValue() {
+    document.querySelector(".millisecond").innerText = ms;
+    document.querySelector(".second").innerText = sec;
+    document.querySelector(".minute").innerText = min;
+    document.querySelector(".hour").innerText = hr;
+  }
+
+  function calcScore(score) {
+    var score = score - (((min*60) + sec + (ms*0.001))* 1000)
+  }
+
     const questionList = [
       {
         question: "What is the Most Abundant Gas in the Atmosphere?",
@@ -166,6 +229,9 @@
     }
 
     function nextQuestion(index) {
+
+      start();
+
       handleQuestions();
 
       var CurQ = questions[index];
@@ -195,7 +261,7 @@
       var CurQ = questions[index];
       var curAns = CurQ.correctOption;
       if (currentID == curAns) {
-        score++;
+        score+= 10000;
         var DisSc = document.getElementById("ScoreL");
         var entered = score;
         DisSc.innerText = "Score:" + entered;
@@ -223,8 +289,9 @@
     }
 
     function endGame() {
+      calcScore(score)
       localStorage.setItem("score", score);
-
+     
       var Name = localStorage.getItem("name");
       var Score = score;
 
