@@ -202,3 +202,43 @@
   font: var(--font);
   color: var(--nav-colour);
 }
+
+
+
+.minute {
+  color: var(--nav-colour);
+}
+.second {
+  color: var(--nav-colour);
+}
+
+.time span.colon{
+  width: 10px;
+  color: var(--nav-colour);
+}
+.time span.ms-colon,
+.time span.millisecond{
+  color: var(--nav-colour);
+}
+.wrapper .buttons{
+  text-align: center;
+  margin-top: 20px;
+}
+.buttons button{
+  padding: 6px 16px;
+  outline: none;
+  border: none;
+  margin: 0 5px;
+  color: var(--nav-colour);
+  background: #fff;
+  font-size: 19px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.09);
+}
+.buttons button.active,
+.buttons button.stopActive{
+  pointer-events: none;
+  opacity: 0.7;
+}
