@@ -34,7 +34,7 @@
     <!--text / image / text-->
     <div class="column left">
       <p><h2>Why does it matter?</h2>Left unchecked, the impacts of climate change will spread and worsen, affecting our homes and cities, economies, food and water supplies as well as the species, ecosystems, and biodiversity of this planet we all call home.</p>
-      <a href="whyact.html">
+      <a href="whyact">
           <span class="button">
               <p>Learn more</p>     
           </span>
@@ -47,7 +47,7 @@
 
     <div class="column right">
       <p class="centered"><h2>Biggest Threats</h2>Fossil fuels – coal, oil and gas – are by far the largest contributor to global climate change, accounting for over 75 per cent of global greenhouse gas emissions and nearly 90 per cent of all carbon dioxide emissions.</p>
-      <a href="biggestthreats.html">
+      <a href="biggestthreats">
           <span class="button">
               <p>Learn more</p>     
           </span>
@@ -64,13 +64,13 @@
 
     <div class="column middle">
       <p><h2>What can I do?</h2>Everyone can help limit climate change. From the way we travel, to the electricity we use and the food we eat, we can make a difference.</p>
-      <a href="whatcanido.html">
+      <a href="whatcanido">
           <span class="button">
               <p>Learn more</p>     
           </span>
       </a>
         <h2>Want to test your knowledge?</h2>
-        <a href="quiz.html"><p class="button"> Why not try our QUIZ!</p></a>
+        <a href="quiz"><p class="button"> Why not try our QUIZ!</p></a>
     </div>
 
     <div class="column right">
